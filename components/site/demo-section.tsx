@@ -9,21 +9,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { cn } from "@/lib/utils";
-import { Marquee } from "@/components/site/marquee";
-import {
-  BrandWordmark,
-  ChromeIcon,
-  IntercomIcon,
-  Microsoft365Icon,
-  NotionIcon,
-  OktaIcon,
-  SalesforceIcon,
-  SapIcon,
-  SlackIcon,
-  ZendeskIcon,
-  ZoomIcon,
-} from "@/components/site/brand-icons";
 
 const CODE = `demo.build({
   mode: 'interactive',
@@ -55,54 +40,6 @@ const TABS = [
     body: "Every completion is validated and logged, giving you an audit-ready record instead of a view count.",
   },
 ];
-
-/**
- * `icon: null` means the brand has no freely licensed mark (ServiceNow and
- * Workday both require written authorisation), so it shows as a wordmark.
- */
-const INTEGRATIONS: {
-  name: string;
-  kind: string;
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>> | null;
-}[] = [
-  { name: "Salesforce", kind: "CRM", icon: SalesforceIcon },
-  { name: "ServiceNow", kind: "ITSM", icon: null },
-  { name: "Zendesk", kind: "Support", icon: ZendeskIcon },
-  { name: "Workday", kind: "HR", icon: null },
-  { name: "SAP", kind: "ERP", icon: SapIcon },
-  { name: "Slack", kind: "Collaboration", icon: SlackIcon },
-  { name: "Microsoft 365", kind: "Productivity", icon: Microsoft365Icon },
-  { name: "Okta", kind: "Identity", icon: OktaIcon },
-  { name: "Chrome", kind: "Browser", icon: ChromeIcon },
-  { name: "Zoom", kind: "Enablement", icon: ZoomIcon },
-  { name: "Notion", kind: "Docs", icon: NotionIcon },
-  { name: "Intercom", kind: "Messaging", icon: IntercomIcon },
-];
-
-function IntegrationCard({ item }: { item: (typeof INTEGRATIONS)[number] }) {
-  const Icon = item.icon;
-  return (
-    <div className="mr-4 flex w-64 shrink-0 items-center gap-4 rounded-3xl bg-card px-5 py-4 ring-1 ring-foreground/10">
-      {/* Neutral chip — a tinted one would shift every brand colour. */}
-      <span
-        className={cn(
-          "grid size-11 shrink-0 place-items-center rounded-2xl bg-muted",
-          !Icon && "text-muted-foreground"
-        )}
-      >
-        {Icon ? (
-          <Icon className="size-5.5" />
-        ) : (
-          <BrandWordmark name={item.name.slice(0, 2).toUpperCase()} className="text-sm" />
-        )}
-      </span>
-      <span className="flex min-w-0 flex-col gap-0.5">
-        <span className="truncate text-sm font-medium">{item.name}</span>
-        <span className="text-xs text-muted-foreground">{item.kind}</span>
-      </span>
-    </div>
-  );
-}
 
 export function DemoSection() {
   return (
@@ -160,22 +97,6 @@ export function DemoSection() {
         </Tabs>
       </div>
 
-      {/* Integrations rail */}
-      <div className="my-20 flex flex-col gap-5 sm:my-24">
-        <p className="mx-auto px-4 text-center text-xs tracking-widest text-muted-foreground uppercase">
-          Runs on top of the tools your teams use
-        </p>
-        <Marquee duration="46s">
-          {INTEGRATIONS.map((item, i) => (
-            <IntegrationCard key={`${item.name}-${i}`} item={item} />
-          ))}
-        </Marquee>
-        <Marquee duration="52s" reverse>
-          {[...INTEGRATIONS].reverse().map((item, i) => (
-            <IntegrationCard key={`${item.name}-rev-${i}`} item={item} />
-          ))}
-        </Marquee>
-      </div>
     </section>
   );
 }

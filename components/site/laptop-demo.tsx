@@ -333,14 +333,15 @@ export function LaptopDemo() {
                                 {verified ? "94%" : accepted ? "61%" : "—"}
                               </span>
                             </div>
-                            <div className="flex h-10 items-end gap-1">
+                            <div className="flex h-14 items-end gap-1">
                               {BARS.map((h, i) => (
-                                <motion.span
-                                  key={i}
-                                  className="flex-1 rounded-full bg-brand/60"
-                                  animate={{ height: accepted ? `${h}%` : "12%" }}
-                                  transition={{ duration: 0.7, delay: i * 0.05 }}
-                                />
+                                <span key={i} className="flex flex-1 items-end justify-center">
+                                  <motion.span
+                                    className="w-2 rounded-full bg-brand/60"
+                                    animate={{ height: accepted ? `${(h / 100) * 3.5}rem` : "0.4rem" }}
+                                    transition={{ duration: 0.7, delay: i * 0.05 }}
+                                  />
+                                </span>
                               ))}
                             </div>
                           </div>
@@ -400,8 +401,8 @@ export function LaptopDemo() {
                                   Dewey suggestion
                                 </div>
                                 <p className="mt-1 text-[10px] leading-snug text-muted-foreground">
-                                  Auto-verify “{CHECKLIST[2]}” — I watched this
-                                  step succeed 3 times.
+                                  Skip the manual check — I watched this step
+                                  succeed 3 times in a row.
                                 </p>
                                 <div className="mt-2 flex gap-1.5">
                                   <div ref={acceptBtnRef} className="inline-flex">
