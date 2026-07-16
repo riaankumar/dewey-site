@@ -42,14 +42,14 @@ const CHIPS: Chip[] = [
   { name: "Zendesk", icon: ZendeskIcon, top: "8%", left: "22%", size: "md" },
   { name: "Slack", icon: SlackIcon, top: "40%", left: "4%", size: "lg" },
   { name: "SAP", icon: SapIcon, top: "44%", left: "18%", size: "md" },
-  { name: "Notion", icon: NotionIcon, top: "72%", left: "9%", size: "md" },
-  { name: "Chrome", icon: ChromeIcon, top: "76%", left: "23%", size: "sm" },
+  { name: "Notion", icon: NotionIcon, top: "80%", left: "9%", size: "md" },
+  { name: "Chrome", icon: ChromeIcon, top: "84%", left: "23%", size: "sm" },
   { name: "Zoom", icon: ZoomIcon, top: "8%", left: "73%", size: "md" },
   { name: "Microsoft 365", icon: Microsoft365Icon, top: "13%", left: "87%", size: "lg" },
   { name: "Intercom", icon: IntercomIcon, top: "42%", left: "77%", size: "lg" },
   { name: "Okta", icon: OktaIcon, top: "46%", left: "91%", size: "md" },
-  { name: "Workday", icon: null, top: "74%", left: "72%", size: "sm" },
-  { name: "ServiceNow", icon: null, top: "70%", left: "86%", size: "md" },
+  { name: "Workday", icon: null, top: "82%", left: "72%", size: "sm" },
+  { name: "ServiceNow", icon: null, top: "78%", left: "86%", size: "md" },
 ];
 
 function ChipFace({ chip }: { chip: Chip }) {

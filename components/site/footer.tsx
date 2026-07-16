@@ -37,7 +37,7 @@ const COLUMNS = [
       { label: "How it works", href: "#process" },
       { label: "Use cases", href: "#use-cases" },
       { label: "Pricing", href: "#pricing" },
-      { label: "Integrations", href: "#demo" },
+      { label: "Integrations", href: "#integrations" },
     ],
   },
   {
