@@ -38,8 +38,9 @@ export function Hero() {
           screen readers and crawlers. This carries the real <h1>.
         */}
         <h1 className="sr-only">
-          Recordings that prove — Dewey turns screen recordings into interactive
-          demonstrations that guide, execute, and verify.
+          Show it once. Anyone can do it. Record a workflow like a Loom — Dewey
+          turns it into a guided replay your customer can follow in their own
+          browser, ask questions about, and complete step by step.
         </h1>
 
         {/* 3D model — centred, carries the main text */}
@@ -61,7 +62,7 @@ export function Hero() {
           >
             <Badge variant="brand" className="h-7 gap-1.5 px-3">
               <Sparkles className="size-3" />
-              Interactive demos for enterprise teams
+              Executable screen recordings
             </Badge>
           </motion.div>
 
@@ -71,9 +72,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.32 }}
             className="text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
-            Dewey turns screen recordings into interactive demonstrations that
-            guide, execute, and verify — replacing passive video with proof that
-            work actually got done.
+            Record a workflow like a Loom. Dewey turns it into a guided replay
+            your customer can follow in their own browser, ask questions about,
+            and complete step by step.
           </motion.p>
 
           <motion.div
@@ -83,12 +84,12 @@ export function Hero() {
             className="flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <Button variant="accent" size="lg" className="group px-5">
-              Book a demo
+              Join the design partner program
               <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
             </Button>
             <Button variant="outline" size="lg" className="group px-5">
               <Play className="fill-current" />
-              See it in action
+              Watch a 60-second replay
             </Button>
           </motion.div>
 

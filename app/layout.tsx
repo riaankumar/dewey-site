@@ -19,9 +19,9 @@ const hostGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Dewey — Interactive demos for enterprise teams",
+  title: "Dewey — Show it once. Anyone can do it.",
   description:
-    "Dewey turns screen recordings into interactive demonstrations that guide, execute, and verify — replacing passive video with proof that work actually got done.",
+    "Record a workflow like a Loom. Dewey turns it into a guided replay your customer can follow in their own browser, ask questions about, and complete step by step.",
 };
 
 export default function RootLayout({
