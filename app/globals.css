@@ -134,6 +134,8 @@
 }
 
 .dark {
+  /* Hands native scrollbars, form controls and the browser UI the dark cut. */
+  color-scheme: dark;
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
