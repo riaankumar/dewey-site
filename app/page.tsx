@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/site/navbar";
-import { Hero } from "@/components/site/hero";
+import { HeroBanner } from "@/components/site/hero-banner";
 import { DemoSection } from "@/components/site/demo-section";
 import { Features } from "@/components/site/features";
 import { LaptopDemo } from "@/components/site/laptop-demo";
@@ -14,7 +14,7 @@ export default function Home() {
     <div className="flex min-h-full flex-1 flex-col">
       <Navbar />
       <main className="flex-1">
-        <Hero />
+        <HeroBanner />
         <LaptopDemo />
         <DemoSection />
         <Features />
