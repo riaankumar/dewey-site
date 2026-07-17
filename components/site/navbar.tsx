@@ -69,6 +69,12 @@ const useCaseLinks = [
   { title: "Compliance training", description: "Verified completion with an audit trail.", href: "#use-cases" },
 ];
 
+const developerLinks = [
+  { title: "Documentation", icon: BookOpen, href: "#developers" },
+  { title: "API reference", icon: Code2, href: "#developers" },
+  { title: "SDK & embeds", icon: Blocks, href: "#developers" },
+];
+
 const mobileLinks = [
   { label: "Product", href: "#features" },
   { label: "How it works", href: "#process" },
@@ -77,129 +83,125 @@ const mobileLinks = [
   { label: "Pricing", href: "#pricing" },
 ];
 
+/* Translucent chrome shared by the left and right clusters. */
+const cluster =
+  "flex shrink-0 items-center gap-1 rounded-3xl bg-background/50 p-1 ring-1 ring-border/40 backdrop-blur-xl";
+
+/* Nav hover/open states stay translucent so the page reads through them. */
+const navItem =
+  "bg-transparent hover:bg-foreground/5 focus:bg-foreground/5 data-popup-open:bg-foreground/5 data-popup-open:hover:bg-foreground/10 data-open:bg-foreground/5 data-open:hover:bg-foreground/10";
+
 export function Navbar() {
-  const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
 
-  React.useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
+  /* Fixed, not sticky: sticky reserves 64px of layout space and the page
+     background shows through it, which reads as a solid header bar. */
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled
-          ? "border-b border-border/70 bg-background/80 backdrop-blur-xl"
-          : "border-b border-transparent bg-transparent"
-      )}
-    >
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        {/* Left — logo */}
-        <Link href="/" aria-label="Emulate home" className="shrink-0">
-          <Logo />
-        </Link>
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-start justify-between gap-4 px-4 pt-3 sm:px-6 lg:px-8">
+        {/* Left — logo + nav */}
+        <div className={cn(cluster, "pl-3")}>
+          <Link href="/" aria-label="Emulate home" className="shrink-0 pr-1">
+            <Logo />
+          </Link>
 
-        {/* Center — nav */}
-        <NavigationMenu className="hidden lg:flex" align="center">
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Product</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[34rem] grid-cols-2 gap-1">
-                  {productLinks.map((item) => (
-                    <li key={item.title}>
-                      <NavigationMenuLink
-                        render={<Link href={item.href} />}
-                        className="items-start gap-3 rounded-2xl p-3"
-                      >
-                        <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-xl bg-brand-muted text-brand-ink">
-                          <item.icon className="size-4" />
-                        </span>
-                        <span className="flex flex-col gap-0.5">
+          <NavigationMenu className="hidden lg:flex" align="start">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={navItem}>Product</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[34rem] grid-cols-2 gap-1">
+                    {productLinks.map((item) => (
+                      <li key={item.title}>
+                        <NavigationMenuLink
+                          render={<Link href={item.href} />}
+                          className="items-start gap-3 rounded-2xl p-3"
+                        >
+                          <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-xl bg-brand-muted text-brand-ink">
+                            <item.icon className="size-4" />
+                          </span>
+                          <span className="flex flex-col gap-0.5">
+                            <span className="text-sm font-medium">{item.title}</span>
+                            <span className="text-xs leading-relaxed text-muted-foreground">
+                              {item.description}
+                            </span>
+                          </span>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  render={<Link href="#process" />}
+                  className={cn("px-2.5 py-1.5 text-sm font-medium", navItem)}
+                >
+                  How it works
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={navItem}>Use cases</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[26rem] gap-1">
+                    {useCaseLinks.map((item) => (
+                      <li key={item.title}>
+                        <NavigationMenuLink
+                          render={<Link href={item.href} />}
+                          className="flex-col items-start gap-0.5 rounded-2xl p-3"
+                        >
                           <span className="text-sm font-medium">{item.title}</span>
-                          <span className="text-xs leading-relaxed text-muted-foreground">
+                          <span className="text-xs text-muted-foreground">
                             {item.description}
                           </span>
-                        </span>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                render={<Link href="#process" />}
-                className="px-2.5 py-1.5 text-sm font-medium"
-              >
-                How it works
-              </NavigationMenuLink>
-            </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={navItem}>Developers</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[24rem] gap-1">
+                    {developerLinks.map((item) => (
+                      <li key={item.title}>
+                        <NavigationMenuLink
+                          render={<Link href={item.href} />}
+                          className="gap-3 rounded-2xl p-3"
+                        >
+                          <item.icon className="size-4 text-muted-foreground" />
+                          <span className="text-sm font-medium">{item.title}</span>
+                          <ArrowUpRight className="ml-auto size-3.5 text-muted-foreground" />
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
 
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Use cases</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[26rem] gap-1">
-                  {useCaseLinks.map((item) => (
-                    <li key={item.title}>
-                      <NavigationMenuLink
-                        render={<Link href={item.href} />}
-                        className="flex-col items-start gap-0.5 rounded-2xl p-3"
-                      >
-                        <span className="text-sm font-medium">{item.title}</span>
-                        <span className="text-xs text-muted-foreground">
-                          {item.description}
-                        </span>
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Developers</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[24rem] gap-1">
-                  {[
-                    { title: "Documentation", icon: BookOpen, href: "#developers" },
-                    { title: "API reference", icon: Code2, href: "#developers" },
-                    { title: "SDK & embeds", icon: Blocks, href: "#developers" },
-                  ].map((item) => (
-                    <li key={item.title}>
-                      <NavigationMenuLink
-                        render={<Link href={item.href} />}
-                        className="gap-3 rounded-2xl p-3"
-                      >
-                        <item.icon className="size-4 text-muted-foreground" />
-                        <span className="text-sm font-medium">{item.title}</span>
-                        <ArrowUpRight className="ml-auto size-3.5 text-muted-foreground" />
-                      </NavigationMenuLink>
-                    </li>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
-              <NavigationMenuLink
-                render={<Link href="#pricing" />}
-                className="px-2.5 py-1.5 text-sm font-medium"
-              >
-                Pricing
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  render={<Link href="#pricing" />}
+                  className={cn("px-2.5 py-1.5 text-sm font-medium", navItem)}
+                >
+                  Pricing
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
 
         {/* Right — auth */}
-        <div className="flex shrink-0 items-center gap-2">
-          <Button variant="ghost" size="lg" className="hidden sm:inline-flex px-4">
+        <div className={cluster}>
+          <Button
+            variant="ghost"
+            size="lg"
+            className="hidden px-4 hover:bg-foreground/5 sm:inline-flex"
+          >
             Sign in
           </Button>
           <Button variant="accent" size="lg" className="hidden px-4 sm:inline-flex">
@@ -209,7 +211,12 @@ export function Navbar() {
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               render={
-                <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open menu">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hover:bg-foreground/5 lg:hidden"
+                  aria-label="Open menu"
+                >
                   <Menu />
                 </Button>
               }
