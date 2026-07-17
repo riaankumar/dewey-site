@@ -23,7 +23,7 @@ const TABS = [
     label: "Record",
     icon: Clapperboard,
     title: "Capture the workflow once",
-    body: "Hit record and run the process like you always do. Dewey parses every click, input, and screen into structured steps.",
+    body: "Hit record and run the process like you always do. Emulate parses every click, input, and screen into structured steps.",
   },
   {
     value: "interactive",

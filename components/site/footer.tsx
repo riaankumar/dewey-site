@@ -130,7 +130,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Dewey. All rights reserved.
+            © {new Date().getFullYear()} Emulate. All rights reserved.
           </p>
           <p className="flex items-center gap-2 text-xs text-muted-foreground">
             <span className="relative flex size-2">

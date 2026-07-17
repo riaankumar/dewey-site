@@ -24,7 +24,7 @@ export function Logo({
         </svg>
       </span>
       <span className="font-primary text-lg leading-7 font-light tracking-tight">
-        Dewey
+        Emulate
       </span>
       {showTm ? (
         <span className="mt-0.5 text-[9px] leading-none text-muted-foreground">

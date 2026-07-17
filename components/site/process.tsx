@@ -18,13 +18,13 @@ const STEPS = [
     numeral: "I",
     icon: Video,
     title: "Record the workflow",
-    body: "Capture any process with a screen recording. Dewey parses each click, input, and screen into structured steps automatically.",
+    body: "Capture any process with a screen recording. Emulate parses each click, input, and screen into structured steps automatically.",
   },
   {
     numeral: "II",
     icon: ScanLine,
     title: "Turn it interactive",
-    body: "Dewey converts the recording into a guided demonstration that runs inside your live app — no editing required.",
+    body: "Emulate converts the recording into a guided demonstration that runs inside your live app — no editing required.",
   },
   {
     numeral: "III",

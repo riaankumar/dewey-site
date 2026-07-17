@@ -5,7 +5,7 @@ import type { CSSProperties, SVGProps } from "react";
  *
  * Path data is from Simple Icons (https://simpleicons.org), which is CC0. Every
  * brand name and logo remains a trademark of its owner and appears here only to
- * identify the products Dewey integrates with.
+ * identify the products Emulate integrates with.
  *
  * Two colours per brand, because a single one cannot work on both themes: some
  * marks are near-black (Notion #000, Zendesk, Slack) and vanish on a dark card,

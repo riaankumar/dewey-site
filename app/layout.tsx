@@ -19,9 +19,9 @@ const hostGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Dewey — Show it once. Anyone can do it.",
+  title: "Emulate — Recordings that execute.",
   description:
-    "Record a workflow like a Loom. Dewey turns it into a guided replay your customer can follow in their own browser, ask questions about, and complete step by step.",
+    "Record a workflow like a Loom. Emulate turns it into a guided replay your customer can follow in their own browser, ask questions about, and complete step by step.",
 };
 
 export default function RootLayout({

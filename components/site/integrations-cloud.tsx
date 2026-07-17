@@ -105,7 +105,7 @@ export function IntegrationsCloud() {
               <span className="text-muted-foreground">your stack.</span>
             </h2>
             <p className="max-w-md text-pretty text-sm leading-relaxed text-muted-foreground">
-              Dewey drives the tools your teams already use — no rip-and-replace,
+              Emulate drives the tools your teams already use — no rip-and-replace,
               no plugins to maintain.
             </p>
             <Button size="lg" className="group px-5">

@@ -99,7 +99,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         {/* Left — logo */}
-        <Link href="/" aria-label="Dewey home" className="shrink-0">
+        <Link href="/" aria-label="Emulate home" className="shrink-0">
           <Logo />
         </Link>
 

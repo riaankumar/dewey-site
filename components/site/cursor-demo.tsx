@@ -125,7 +125,7 @@ export function CursorDemo({ className }: { className?: string }) {
         </span>
         <Badge variant="brand" className="ml-auto h-5 gap-1 px-2 text-[10px]">
           <span className="size-1.5 rounded-full bg-brand" />
-          Dewey live
+          Emulate live
         </Badge>
       </div>
 

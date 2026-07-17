@@ -39,7 +39,7 @@ const SEQ: { target: TargetKey; tip: string; hold: number }[] = [
   { target: "runBtn", tip: "Run the interactive demo", hold: 1600 },
   { target: "nameField", tip: "Naming the rollout…", hold: 2400 },
   { target: "modeSelect", tip: "Interactive + verified", hold: 1600 },
-  { target: "acceptBtn", tip: "Accept Dewey's suggestion", hold: 2000 },
+  { target: "acceptBtn", tip: "Accept Emulate's suggestion", hold: 2000 },
   { target: "verifyArea", tip: "Capturing proof…", hold: 1800 },
   { target: "verifyArea", tip: "12 attestations recorded", hold: 2800 },
 ];
@@ -164,7 +164,7 @@ export function LaptopDemo() {
             Watch it drive
           </Badge>
           <h2 className="text-balance text-4xl leading-[1.05] tracking-tight sm:text-5xl">
-            Dewey takes the wheel.
+            Emulate takes the wheel.
             <br />
             <span className="text-muted-foreground">You take the credit.</span>
           </h2>
@@ -197,7 +197,7 @@ export function LaptopDemo() {
                       <span className="size-2 rounded-full bg-foreground/15" />
                     </span>
                     <span className="ml-2 hidden truncate rounded-lg bg-background px-3 py-0.5 text-[10px] text-muted-foreground ring-1 ring-foreground/10 sm:block">
-                      app.dewey.io — Enablement OS
+                      app.emulate.io — Enablement OS
                     </span>
                     <span className="ml-auto flex items-center -space-x-1.5">
                       {["SR", "MK", "AL"].map((initials) => (
@@ -208,7 +208,7 @@ export function LaptopDemo() {
                     </span>
                     <Badge variant="accent" className="h-5 gap-1 px-2 text-[9px]">
                       <span className="size-1 animate-pulse rounded-full bg-white" />
-                      Dewey driving
+                      Emulate driving
                     </Badge>
                   </div>
 
@@ -398,7 +398,7 @@ export function LaptopDemo() {
                               >
                                 <div className="flex items-center gap-1.5 text-[10px] font-semibold">
                                   <Sparkles className="size-3 text-brand-ink" />
-                                  Dewey suggestion
+                                  Emulate suggestion
                                 </div>
                                 <p className="mt-1 text-[10px] leading-snug text-muted-foreground">
                                   Skip the manual check — I watched this step

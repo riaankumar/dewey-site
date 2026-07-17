@@ -69,7 +69,7 @@ export function SplineEmbed({ className }: { className?: string }) {
   return (
     <SplineFrame
       scene={HERO_SCENE}
-      title="Dewey — interactive product demonstration"
+      title="Emulate — interactive product demonstration"
       className={className}
     />
   );

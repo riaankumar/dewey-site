@@ -64,7 +64,7 @@ export function CTA() {
 
           <p className="flex items-center gap-1.5 text-xs text-neutral-600">
             <ShieldCheck className="size-3.5 text-brand-from" />
-            Org AI included via Dewey — no employee API keys
+            Org AI included via Emulate — no employee API keys
           </p>
         </div>
       </div>

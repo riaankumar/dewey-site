@@ -38,7 +38,7 @@ export function Hero() {
           screen readers and crawlers. This carries the real <h1>.
         */}
         <h1 className="sr-only">
-          Show it once. Anyone can do it. Record a workflow like a Loom — Dewey
+          Show it once. Anyone can do it. Record a workflow like a Loom — Emulate
           turns it into a guided replay your customer can follow in their own
           browser, ask questions about, and complete step by step.
         </h1>
@@ -72,7 +72,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.32 }}
             className="text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
-            Record a workflow like a Loom. Dewey turns it into a guided replay
+            Record a workflow like a Loom. Emulate turns it into a guided replay
             your customer can follow in their own browser, ask questions about,
             and complete step by step.
           </motion.p>
@@ -107,12 +107,12 @@ export function Hero() {
                     <p className="mx-auto max-w-xl cursor-help text-xs leading-relaxed text-muted-foreground/80 underline decoration-dotted underline-offset-4">
                       Attestations are runtime-observed completions — not
                       cryptographic proof a human did the task. Org AI runs
-                      through Dewey, so no employee API keys are required.
+                      through Emulate, so no employee API keys are required.
                     </p>
                   }
                 />
                 <TooltipContent className="max-w-xs">
-                  Dewey observes each step at runtime inside the live app and
+                  Emulate observes each step at runtime inside the live app and
                   records what completed.
                 </TooltipContent>
               </Tooltip>

@@ -55,7 +55,7 @@ export function Features() {
               </div>
               <CardTitle className="text-xl">Execute in the live app</CardTitle>
               <CardDescription className="leading-relaxed">
-                Users don&apos;t just watch — they do. Dewey runs interactive
+                Users don&apos;t just watch — they do. Emulate runs interactive
                 steps in the actual product, so learning happens by completing
                 real work.
               </CardDescription>
@@ -76,7 +76,7 @@ export function Features() {
               </div>
               <CardTitle className="text-xl">Record once, convert instantly</CardTitle>
               <CardDescription className="max-w-md leading-relaxed">
-                Capture any workflow with a screen recording. Dewey turns it into
+                Capture any workflow with a screen recording. Emulate turns it into
                 a structured, interactive demonstration automatically — no manual
                 authoring.
               </CardDescription>
@@ -97,7 +97,7 @@ export function Features() {
               </div>
               <CardTitle className="text-xl">Guide users step by step</CardTitle>
               <CardDescription className="leading-relaxed">
-                Dewey highlights exactly where to click and what to type, right
+                Emulate highlights exactly where to click and what to type, right
                 inside the real interface.
               </CardDescription>
             </CardHeader>
