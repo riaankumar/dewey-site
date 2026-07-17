@@ -16,6 +16,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Marquee } from "@/components/site/marquee";
+import { BuiltBy } from "@/components/site/built-by";
 
 const stats = [
   { value: "73%", label: "faster time-to-competency", tag: "Onboarding" },
@@ -192,6 +193,8 @@ export function HeroBanner() {
               </Tooltip>
             </TooltipProvider>
           </motion.div>
+
+          <BuiltBy />
           </div>
         </div>
       </div>
