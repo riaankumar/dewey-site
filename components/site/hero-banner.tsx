@@ -8,13 +8,6 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { Marquee } from "@/components/site/marquee";
 import { BuiltBy } from "@/components/site/built-by";
 
@@ -166,32 +159,6 @@ export function HeroBanner() {
               <Play className="fill-current" />
               Watch a 60-second replay
             </Button>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.36 }}
-            className="w-full max-w-3xl"
-          >
-            <Separator className="mb-4 bg-white/15" />
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger
-                  render={
-                    <p className="mx-auto max-w-xl cursor-help text-xs leading-relaxed text-white/55 underline decoration-dotted underline-offset-4">
-                      Attestations are runtime-observed completions — not
-                      cryptographic proof a human did the task. Org AI runs
-                      through Emulate, so no employee API keys are required.
-                    </p>
-                  }
-                />
-                <TooltipContent className="max-w-xs">
-                  Emulate observes each step at runtime inside the live app and
-                  records what completed.
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
           </motion.div>
 
           <BuiltBy />
