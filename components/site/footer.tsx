@@ -4,6 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Logo } from "@/components/site/logo";
 
+const dashboardUrl =
+  process.env.NEXT_PUBLIC_APP_DASHBOARD_URL ??
+  "https://dewey-share.fly.dev/dashboard";
+
 /* lucide dropped brand marks in v1, so the social glyphs are inlined here. */
 function XIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -38,6 +42,7 @@ const COLUMNS = [
       { label: "Use cases", href: "#use-cases" },
       { label: "Pricing", href: "#pricing" },
       { label: "Integrations", href: "#integrations" },
+      { label: "Customer login", href: dashboardUrl },
     ],
   },
   {

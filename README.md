@@ -16,6 +16,15 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Set `NEXT_PUBLIC_APP_DASHBOARD_URL` in Vercel to the customer workspace URL:
+
+```bash
+NEXT_PUBLIC_APP_DASHBOARD_URL=https://dewey-share.fly.dev/dashboard
+```
+
+The navigation and footer use this value for customer sign-in and fall back to
+the production Fly URL when it is not set.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
