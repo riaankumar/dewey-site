@@ -83,6 +83,10 @@ const mobileLinks = [
   { label: "Pricing", href: "#pricing" },
 ];
 
+const dashboardUrl =
+  process.env.NEXT_PUBLIC_APP_DASHBOARD_URL ??
+  "https://dewey-share.fly.dev/dashboard";
+
 /* Translucent chrome shared by the left and right clusters. */
 const cluster =
   "flex shrink-0 items-center gap-1 rounded-3xl bg-background/50 p-1 ring-1 ring-border/40 backdrop-blur-xl";
@@ -198,6 +202,7 @@ export function Navbar() {
         {/* Right — auth */}
         <div className={cluster}>
           <Button
+            render={<a href={dashboardUrl} />}
             variant="ghost"
             size="lg"
             className="hidden px-4 hover:bg-foreground/5 sm:inline-flex"
@@ -244,7 +249,11 @@ export function Navbar() {
               </nav>
               <Separator className="my-2" />
               <div className="flex flex-col gap-2 px-4 pb-4">
-                <Button variant="ghost" size="lg">
+                <Button
+                  render={<a href={dashboardUrl} onClick={() => setOpen(false)} />}
+                  variant="ghost"
+                  size="lg"
+                >
                   Sign in
                 </Button>
                 <Button variant="accent" size="lg">
