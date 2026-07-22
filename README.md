@@ -16,8 +16,8 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Customer sign-in stays on the marketing domain. Vercel rewrites `/dashboard` and
-`/api` to the Fly host (`share.useemulate.com`).
+Customer sign-in stays on the marketing domain. Vercel rewrites `/dashboard`,
+`/admin`, and `/api` to the Fly host (`share.useemulate.com`).
 
 The Sign in URL is hardcoded in `lib/customer-dashboard.ts` as
 `https://www.useemulate.com/dashboard` so a stale Vercel
