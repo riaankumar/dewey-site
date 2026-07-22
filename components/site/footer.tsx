@@ -3,10 +3,9 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Logo } from "@/components/site/logo";
+import { CUSTOMER_DASHBOARD_URL } from "@/lib/customer-dashboard";
 
-const dashboardUrl =
-  process.env.NEXT_PUBLIC_APP_DASHBOARD_URL ??
-  "https://www.useemulate.com/dashboard";
+const dashboardUrl = CUSTOMER_DASHBOARD_URL;
 
 /* lucide dropped brand marks in v1, so the social glyphs are inlined here. */
 function XIcon(props: React.SVGProps<SVGSVGElement>) {
