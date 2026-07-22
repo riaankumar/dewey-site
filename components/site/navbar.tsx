@@ -33,6 +33,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Logo } from "@/components/site/logo";
+import { CUSTOMER_DASHBOARD_URL } from "@/lib/customer-dashboard";
 import { cn } from "@/lib/utils";
 
 const productLinks = [
@@ -83,9 +84,7 @@ const mobileLinks = [
   { label: "Pricing", href: "#pricing" },
 ];
 
-const dashboardUrl =
-  process.env.NEXT_PUBLIC_APP_DASHBOARD_URL ??
-  "https://www.useemulate.com/dashboard";
+const dashboardUrl = CUSTOMER_DASHBOARD_URL;
 
 /* Translucent chrome shared by the left and right clusters. */
 const cluster =

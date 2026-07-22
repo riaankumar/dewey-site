@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 /** Fly app host — dashboard + APIs are served here; www proxies these paths. */
-const emulateCloudOrigin =
-  process.env.EMULATE_CLOUD_ORIGIN ?? "https://share.useemulate.com";
+const emulateCloudOrigin = "https://share.useemulate.com";
 
 const nextConfig: NextConfig = {
   async rewrites() {

@@ -17,17 +17,17 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 Customer sign-in stays on the marketing domain. Vercel rewrites `/dashboard` and
-`/api` to the Fly host (`share.useemulate.com` by default).
+`/api` to the Fly host (`share.useemulate.com`).
 
-Optional overrides in Vercel:
+The Sign in URL is hardcoded in `lib/customer-dashboard.ts` as
+`https://www.useemulate.com/dashboard` so a stale Vercel
+`NEXT_PUBLIC_APP_DASHBOARD_URL` cannot override it at build time.
+
+Optional override for the Fly proxy target only:
 
 ```bash
-NEXT_PUBLIC_APP_DASHBOARD_URL=https://www.useemulate.com/dashboard
 EMULATE_CLOUD_ORIGIN=https://share.useemulate.com
 ```
-
-Navigation and footer use `NEXT_PUBLIC_APP_DASHBOARD_URL` when set; otherwise
-they link to `https://www.useemulate.com/dashboard`.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
