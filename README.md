@@ -16,14 +16,18 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Set `NEXT_PUBLIC_APP_DASHBOARD_URL` in Vercel to the customer workspace URL:
+Customer sign-in stays on the marketing domain. Vercel rewrites `/dashboard` and
+`/api` to the Fly host (`share.useemulate.com` by default).
+
+Optional overrides in Vercel:
 
 ```bash
-NEXT_PUBLIC_APP_DASHBOARD_URL=https://dewey-share.fly.dev/dashboard
+NEXT_PUBLIC_APP_DASHBOARD_URL=https://www.useemulate.com/dashboard
+EMULATE_CLOUD_ORIGIN=https://share.useemulate.com
 ```
 
-The navigation and footer use this value for customer sign-in and fall back to
-the production Fly URL when it is not set.
+Navigation and footer use `NEXT_PUBLIC_APP_DASHBOARD_URL` when set; otherwise
+they link to `https://www.useemulate.com/dashboard`.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
