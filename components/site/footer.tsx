@@ -6,7 +6,7 @@ import { Logo } from "@/components/site/logo";
 
 const dashboardUrl =
   process.env.NEXT_PUBLIC_APP_DASHBOARD_URL ??
-  "https://dewey-share.fly.dev/dashboard";
+  "https://www.useemulate.com/dashboard";
 
 /* lucide dropped brand marks in v1, so the social glyphs are inlined here. */
 function XIcon(props: React.SVGProps<SVGSVGElement>) {

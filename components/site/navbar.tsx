@@ -85,7 +85,7 @@ const mobileLinks = [
 
 const dashboardUrl =
   process.env.NEXT_PUBLIC_APP_DASHBOARD_URL ??
-  "https://dewey-share.fly.dev/dashboard";
+  "https://www.useemulate.com/dashboard";
 
 /* Translucent chrome shared by the left and right clusters. */
 const cluster =
