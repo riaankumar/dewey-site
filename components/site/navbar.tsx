@@ -3,14 +3,10 @@
 import * as React from "react";
 import Link from "next/link";
 import {
-  ArrowUpRight,
-  BadgeCheck,
-  Blocks,
-  BookOpen,
-  Code2,
+  BarChart3,
+  MessageSquareText,
   Menu,
   MousePointerClick,
-  ShieldCheck,
   Video,
 } from "lucide-react";
 
@@ -38,49 +34,42 @@ import { cn } from "@/lib/utils";
 
 const productLinks = [
   {
-    title: "Record to demo",
-    description: "Turn any screen recording into an interactive demonstration.",
-    href: "#features",
+    title: "Executable recordings",
+    description: "Record a workflow like a Loom, then let recipients complete it.",
+    href: "#replay",
     icon: Video,
   },
   {
-    title: "Guide & execute",
-    description: "Walkthroughs that run inside your live application.",
-    href: "#features",
+    title: "Recording assistant",
+    description: "Recipients ask the recording and get grounded answers.",
+    href: "#assistant",
+    icon: MessageSquareText,
+  },
+  {
+    title: "Guided replay",
+    description: "A visible second cursor points to the next step in the product.",
+    href: "#how-it-works",
     icon: MousePointerClick,
   },
   {
-    title: "Verify completion",
-    description: "Audit-ready proof that the work actually got done.",
-    href: "#features",
-    icon: BadgeCheck,
-  },
-  {
-    title: "Security",
-    description: "SOC 2 Type II, HIPAA and GDPR with an immutable trail.",
-    href: "#features",
-    icon: ShieldCheck,
+    title: "Completion analytics",
+    description: "See whether the workflow started, stalled, or got done.",
+    href: "#analytics",
+    icon: BarChart3,
   },
 ];
 
 const useCaseLinks = [
-  { title: "Enterprise onboarding", description: "Ramp new hires in days, not weeks.", href: "#use-cases" },
-  { title: "SaaS onboarding", description: "Turn signups into activated users.", href: "#use-cases" },
-  { title: "Customer support", description: "Interactive fixes instead of tickets.", href: "#use-cases" },
-  { title: "Compliance training", description: "Verified completion with an audit trail.", href: "#use-cases" },
-];
-
-const developerLinks = [
-  { title: "Documentation", icon: BookOpen, href: "#developers" },
-  { title: "API reference", icon: Code2, href: "#developers" },
-  { title: "SDK & embeds", icon: Blocks, href: "#developers" },
+  { title: "Customer onboarding", description: "Get every account to its first useful outcome.", href: "#use-cases" },
+  { title: "Customer support", description: "Turn a repeated fix into a guided walkthrough.", href: "#use-cases" },
+  { title: "Implementation", description: "Capture an expert setup once, hand it to everyone.", href: "#use-cases" },
 ];
 
 const mobileLinks = [
-  { label: "Product", href: "#features" },
-  { label: "How it works", href: "#process" },
+  { label: "Product", href: "#replay" },
+  { label: "How it works", href: "#how-it-works" },
   { label: "Use cases", href: "#use-cases" },
-  { label: "Developers", href: "#developers" },
+  { label: "Safety", href: "#safety" },
   { label: "Pricing", href: "#pricing" },
 ];
 
@@ -138,7 +127,7 @@ export function Navbar() {
 
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  render={<Link href="#process" />}
+                  render={<Link href="#how-it-works" />}
                   className={cn("px-2.5 py-1.5 text-sm font-medium", navItem)}
                 >
                   How it works
@@ -167,23 +156,12 @@ export function Navbar() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className={navItem}>Developers</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[24rem] gap-1">
-                    {developerLinks.map((item) => (
-                      <li key={item.title}>
-                        <NavigationMenuLink
-                          render={<Link href={item.href} />}
-                          className="gap-3 rounded-2xl p-3"
-                        >
-                          <item.icon className="size-4 text-muted-foreground" />
-                          <span className="text-sm font-medium">{item.title}</span>
-                          <ArrowUpRight className="ml-auto size-3.5 text-muted-foreground" />
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
+                <NavigationMenuLink
+                  render={<Link href="#safety" />}
+                  className={cn("px-2.5 py-1.5 text-sm font-medium", navItem)}
+                >
+                  Safety
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
@@ -202,14 +180,21 @@ export function Navbar() {
         <div className={cluster}>
           <Button
             render={<a href={dashboardUrl} />}
+            nativeButton={false}
             variant="ghost"
             size="lg"
             className="hidden px-4 hover:bg-foreground/5 sm:inline-flex"
           >
             Sign in
           </Button>
-          <Button variant="accent" size="lg" className="hidden px-4 sm:inline-flex">
-            Book a demo
+          <Button
+            variant="accent"
+            size="lg"
+            className="hidden px-4 sm:inline-flex"
+            nativeButton={false}
+            render={<Link href="#access" />}
+          >
+            Request access
           </Button>
 
           <Sheet open={open} onOpenChange={setOpen}>
@@ -231,7 +216,7 @@ export function Navbar() {
                   <Logo />
                 </SheetTitle>
                 <SheetDescription className="text-left">
-                  Interactive demos for enterprise teams
+                  Executable screen recordings for onboarding and support
                 </SheetDescription>
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4">
@@ -250,13 +235,19 @@ export function Navbar() {
               <div className="flex flex-col gap-2 px-4 pb-4">
                 <Button
                   render={<a href={dashboardUrl} onClick={() => setOpen(false)} />}
+                  nativeButton={false}
                   variant="ghost"
                   size="lg"
                 >
                   Sign in
                 </Button>
-                <Button variant="accent" size="lg">
-                  Book a demo
+                <Button
+                  variant="accent"
+                  size="lg"
+                  nativeButton={false}
+                  render={<Link href="#access" onClick={() => setOpen(false)} />}
+                >
+                  Request access
                 </Button>
               </div>
             </SheetContent>

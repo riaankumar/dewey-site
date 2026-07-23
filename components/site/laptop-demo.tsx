@@ -36,11 +36,11 @@ type TargetKey =
 /** The scripted flow. Each step parks the cursor on a target and holds. */
 const SEQ: { target: TargetKey; tip: string; hold: number }[] = [
   { target: "navWorkflows", tip: "Open Workflows", hold: 1500 },
-  { target: "runBtn", tip: "Run the interactive demo", hold: 1600 },
+  { target: "runBtn", tip: "Start the guided replay", hold: 1600 },
   { target: "nameField", tip: "Naming the rollout…", hold: 2400 },
-  { target: "modeSelect", tip: "Interactive + verified", hold: 1600 },
-  { target: "acceptBtn", tip: "Accept Emulate's suggestion", hold: 2000 },
-  { target: "verifyArea", tip: "Capturing proof…", hold: 1800 },
+  { target: "modeSelect", tip: "Guided + verified", hold: 1600 },
+  { target: "acceptBtn", tip: "Confirm the suggested step", hold: 2000 },
+  { target: "verifyArea", tip: "Recording what completed…", hold: 1800 },
   { target: "verifyArea", tip: "12 attestations recorded", hold: 2800 },
 ];
 
@@ -153,7 +153,7 @@ export function LaptopDemo() {
   }, [index]);
 
   return (
-    <section id="showcase" className="relative overflow-hidden py-20 sm:py-28">
+    <section id="replay" className="relative overflow-hidden py-20 sm:py-28">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 top-1/4 h-96 bg-[radial-gradient(50%_50%_at_50%_50%,var(--brand-glow),transparent_70%)]"
@@ -161,17 +161,17 @@ export function LaptopDemo() {
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex max-w-2xl flex-col gap-4">
           <Badge variant="brand" className="h-6 w-fit px-2.5">
-            Watch it drive
+            Guided replay
           </Badge>
           <h2 className="text-balance text-4xl leading-[1.05] tracking-tight sm:text-5xl">
-            Emulate takes the wheel.
+            Follow the workflow.
             <br />
-            <span className="text-muted-foreground">You take the credit.</span>
+            <span className="text-muted-foreground">Finish it yourself.</span>
           </h2>
           <p className="max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground">
-            An interactive demonstration running end-to-end: opening the
-            workflow, filling the rollout, accepting a suggestion, and verifying
-            every completion — live in the software.
+            A guided replay running end to end: opening the workflow, walking
+            each step, confirming the ones that matter, and recording what
+            completed — with the viewer in control the whole way.
           </p>
         </div>
 
@@ -208,7 +208,7 @@ export function LaptopDemo() {
                     </span>
                     <Badge variant="accent" className="h-5 gap-1 px-2 text-[9px]">
                       <span className="size-1 animate-pulse rounded-full bg-white" />
-                      Emulate driving
+                      Guided replay
                     </Badge>
                   </div>
 
@@ -401,8 +401,8 @@ export function LaptopDemo() {
                                   Emulate suggestion
                                 </div>
                                 <p className="mt-1 text-[10px] leading-snug text-muted-foreground">
-                                  Skip the manual check — I watched this step
-                                  succeed 3 times in a row.
+                                  Confirm this step — I watched it succeed 3
+                                  times in a row.
                                 </p>
                                 <div className="mt-2 flex gap-1.5">
                                   <div ref={acceptBtnRef} className="inline-flex">
