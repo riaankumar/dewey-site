@@ -19,9 +19,9 @@ const hostGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Emulate — Handoff the work, not another video",
+  title: "Emulate — Recordings that execute.",
   description:
-    "Emulate turns how a teammate works into an assistant another person can watch, question, and follow inside the real application.",
+    "Record a workflow like a Loom. Emulate turns it into a guided replay your customer can follow in their own browser, ask questions about, and complete step by step.",
 };
 
 export default function RootLayout({
