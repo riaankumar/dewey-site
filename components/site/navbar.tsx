@@ -2,22 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
-import {
-  BarChart3,
-  MessageSquareText,
-  Menu,
-  MousePointerClick,
-  Video,
-} from "lucide-react";
+import { Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -32,45 +24,11 @@ import { Logo } from "@/components/site/logo";
 import { CUSTOMER_DASHBOARD_URL } from "@/lib/customer-dashboard";
 import { cn } from "@/lib/utils";
 
-const productLinks = [
-  {
-    title: "Executable recordings",
-    description: "Record a workflow like a Loom, then let recipients complete it.",
-    href: "#replay",
-    icon: Video,
-  },
-  {
-    title: "Recording assistant",
-    description: "Recipients ask the recording and get grounded answers.",
-    href: "#assistant",
-    icon: MessageSquareText,
-  },
-  {
-    title: "Guided replay",
-    description: "A visible second cursor points to the next step in the product.",
-    href: "#how-it-works",
-    icon: MousePointerClick,
-  },
-  {
-    title: "Completion analytics",
-    description: "See whether the workflow started, stalled, or got done.",
-    href: "#analytics",
-    icon: BarChart3,
-  },
-];
-
-const useCaseLinks = [
-  { title: "Customer onboarding", description: "Get every account to its first useful outcome.", href: "#use-cases" },
-  { title: "Customer support", description: "Turn a repeated fix into a guided walkthrough.", href: "#use-cases" },
-  { title: "Implementation", description: "Capture an expert setup once, hand it to everyone.", href: "#use-cases" },
-];
-
-const mobileLinks = [
-  { label: "Product", href: "#replay" },
+/* One lean set of links, shared by the desktop bar and the mobile sheet. */
+const NAV = [
   { label: "How it works", href: "#how-it-works" },
-  { label: "Use cases", href: "#use-cases" },
-  { label: "Safety", href: "#safety" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "The assistant", href: "#assistant" },
+  { label: "See it", href: "#replay" },
 ];
 
 const dashboardUrl = CUSTOMER_DASHBOARD_URL;
@@ -99,79 +57,16 @@ export function Navbar() {
 
           <NavigationMenu className="hidden lg:flex" align="start">
             <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className={navItem}>Product</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[34rem] grid-cols-2 gap-1">
-                    {productLinks.map((item) => (
-                      <li key={item.title}>
-                        <NavigationMenuLink
-                          render={<Link href={item.href} />}
-                          className="items-start gap-3 rounded-2xl p-3"
-                        >
-                          <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-xl bg-brand-muted text-brand-ink">
-                            <item.icon className="size-4" />
-                          </span>
-                          <span className="flex flex-col gap-0.5">
-                            <span className="text-sm font-medium">{item.title}</span>
-                            <span className="text-xs leading-relaxed text-muted-foreground">
-                              {item.description}
-                            </span>
-                          </span>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  render={<Link href="#how-it-works" />}
-                  className={cn("px-2.5 py-1.5 text-sm font-medium", navItem)}
-                >
-                  How it works
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className={navItem}>Use cases</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[26rem] gap-1">
-                    {useCaseLinks.map((item) => (
-                      <li key={item.title}>
-                        <NavigationMenuLink
-                          render={<Link href={item.href} />}
-                          className="flex-col items-start gap-0.5 rounded-2xl p-3"
-                        >
-                          <span className="text-sm font-medium">{item.title}</span>
-                          <span className="text-xs text-muted-foreground">
-                            {item.description}
-                          </span>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  render={<Link href="#safety" />}
-                  className={cn("px-2.5 py-1.5 text-sm font-medium", navItem)}
-                >
-                  Safety
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
-                  render={<Link href="#pricing" />}
-                  className={cn("px-2.5 py-1.5 text-sm font-medium", navItem)}
-                >
-                  Pricing
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+              {NAV.map((item) => (
+                <NavigationMenuItem key={item.label}>
+                  <NavigationMenuLink
+                    render={<Link href={item.href} />}
+                    className={cn("px-2.5 py-1.5 text-sm font-medium", navItem)}
+                  >
+                    {item.label}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
             </NavigationMenuList>
           </NavigationMenu>
         </div>
@@ -220,7 +115,7 @@ export function Navbar() {
                 </SheetDescription>
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4">
-                {mobileLinks.map((item) => (
+                {NAV.map((item) => (
                   <Link
                     key={item.label}
                     href={item.href}

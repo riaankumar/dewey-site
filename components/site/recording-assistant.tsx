@@ -26,19 +26,20 @@ export function RecordingAssistant() {
         {/* Copy */}
         <div className="flex flex-col gap-5">
           <Badge variant="brand" className="h-6 w-fit px-2.5">
-            Ask the person who recorded it
+            One assistant, every screen
           </Badge>
           <h2 className="text-balance text-4xl leading-[1.05] tracking-tight sm:text-5xl">
-            Every recording comes
+            An assistant you can
             <br />
-            <span className="text-muted-foreground">with an assistant.</span>
+            <span className="text-muted-foreground">send to anyone.</span>
           </h2>
           <p className="max-w-xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            The recipient can ask Emulate what a step means, why it matters, or
-            what to do on the screen in front of them. Answers stay grounded in
-            the creator&apos;s recording, transcript, workflow, and approved
-            knowledge. When the answer is not supported, Emulate says so and
-            hands the conversation to a person with the right session context.
+            It lives on your screen — ask it what you&apos;re looking at. Then
+            you send it to a customer, and the same assistant guides them on
+            theirs: &ldquo;Avi sent you this emulate.&rdquo; Every answer stays
+            grounded in your recording, transcript, workflow, and approved
+            sources. When it isn&apos;t supported, it says so and hands off to a
+            person.
           </p>
 
           <div className="flex flex-wrap gap-2">
