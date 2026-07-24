@@ -79,7 +79,7 @@ export function Process() {
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
               >
-                <Card className="h-full bg-card/70 backdrop-blur">
+                <Card className="h-full">
                   <CardHeader className="gap-3">
                     <div className="flex items-center gap-3">
                       <span className="grid size-9 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-brand-from via-brand-via to-brand-to text-brand-foreground">

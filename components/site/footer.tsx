@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Logo } from "@/components/site/logo";
 import { CUSTOMER_DASHBOARD_URL } from "@/lib/customer-dashboard";
@@ -36,28 +35,26 @@ const COLUMNS = [
   {
     heading: "Product",
     links: [
-      { label: "How it works", href: "#how-it-works" },
-      { label: "The assistant", href: "#assistant" },
-      { label: "See it", href: "#replay" },
-      { label: "Request access", href: "#access" },
+      { label: "How it works", href: "/#how-it-works" },
+      { label: "The assistant", href: "/#assistant" },
+      { label: "See it", href: "/#replay" },
+      { label: "Request access", href: "/#access" },
       { label: "Customer login", href: dashboardUrl },
     ],
   },
   {
     heading: "Company",
     links: [
-      { label: "About", href: "#" },
-      { label: "Blog", href: "#" },
-      { label: "Careers", href: "#", badge: "Hiring" },
-      { label: "Contact", href: "#" },
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
     heading: "Legal",
     links: [
-      { label: "Privacy", href: "#" },
-      { label: "Terms", href: "#" },
-      { label: "Security", href: "#" },
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" },
+      { label: "Security", href: "/security" },
     ],
   },
 ];
@@ -106,11 +103,6 @@ export function Footer() {
                       className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {link.label}
-                      {"badge" in link && link.badge ? (
-                        <Badge variant="brand" className="h-4 px-1.5 text-[9px]">
-                          {link.badge}
-                        </Badge>
-                      ) : null}
                     </Link>
                   </li>
                 ))}

@@ -58,7 +58,7 @@ export function OutcomeStrip() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Card className="h-full gap-4 bg-card/70 backdrop-blur">
+              <Card className="h-full gap-4">
                 <div className="flex items-center gap-3">
                   <span className="grid size-9 shrink-0 place-items-center rounded-2xl bg-brand-muted text-brand-ink">
                     <step.icon className="size-4" />

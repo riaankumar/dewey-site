@@ -67,7 +67,7 @@ export function RecordingAssistant() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.6 }}
         >
-          <Card className="gap-4 bg-card/80 backdrop-blur">
+          <Card className="gap-4">
             {/* The recipient's question */}
             <div className="flex items-start justify-end gap-2">
               <span className="max-w-[80%] rounded-2xl rounded-tr-sm bg-gradient-to-r from-brand-from via-brand-via to-brand-to px-3 py-2 text-sm text-brand-foreground">
