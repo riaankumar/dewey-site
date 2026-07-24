@@ -1,11 +1,11 @@
 .page {
-  --paper: #f6f6f1;
-  --paper-bright: #fcfcf8;
-  --ink: #161615;
-  --muted: #74736d;
-  --line: #d9d9d0;
-  --dark: #292927;
-  --dark-line: #484844;
+  --paper: #20201e;
+  --paper-bright: #262624;
+  --ink: #f3f2eb;
+  --muted: #aaa9a1;
+  --line: #45453f;
+  --dark: #141413;
+  --dark-line: #383834;
   --orange: #ff4b0a;
   --coral: #ff6f61;
   --peach: #ffdca3;
@@ -116,7 +116,7 @@
 .primaryButton {
   padding: 0 18px;
   background: var(--ink);
-  color: #fff;
+  color: var(--dark);
 }
 
 .primaryButton:hover,
@@ -247,14 +247,14 @@
   min-height: 650px;
   padding: 50px 4vw 34px;
   border-bottom: 1px solid var(--line);
-  background: #f4f0e7;
+  background: #191918;
   overflow: hidden;
 }
 
 .heroVisual::before {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, #6f6c651e 0.8px, transparent 0.8px);
+  background-image: radial-gradient(circle, #ffffff19 0.8px, transparent 0.8px);
   background-size: 5px 5px;
   content: "";
   pointer-events: none;
@@ -281,6 +281,8 @@
   height: auto;
   margin: 20px auto 0;
   border: 1px solid color-mix(in srgb, var(--coral) 20%, var(--line));
+  filter: brightness(0.52) saturate(0.78) contrast(1.12);
+  opacity: 0.9;
 }
 
 .statRail {
@@ -484,7 +486,7 @@
 
 .processTabs button:hover,
 .processTabs .activeTab {
-  background: var(--ink);
+  background: var(--orange);
   color: #fff;
 }
 
@@ -545,8 +547,8 @@
   width: min(84%, 550px);
   margin: 44px auto;
   border: 1px solid #ef745d;
-  background: #fffaf2;
-  box-shadow: 24px 24px 0 #ffc78b;
+  background: #211e1b;
+  box-shadow: 24px 24px 0 #74331f;
 }
 
 .proofChrome {
@@ -555,7 +557,7 @@
   align-items: center;
   gap: 7px;
   padding: 0 14px;
-  border-bottom: 1px solid #efb1a5;
+  border-bottom: 1px solid #75443b;
 }
 
 .proofChrome > span {
@@ -604,8 +606,8 @@
   grid-template-columns: 32px 1fr 22px;
   align-items: center;
   padding: 15px 0;
-  border-top: 1px solid #e6ddd1;
-  color: #a6a097;
+  border-top: 1px solid #46423d;
+  color: #8e8b84;
 }
 
 .proofBody > div > span {
@@ -667,7 +669,7 @@
   position: relative;
   min-width: 0;
   overflow: hidden;
-  background: linear-gradient(145deg, #ffdf98, #ff806f);
+  background: linear-gradient(145deg, #6e3c20, #8a3029);
 }
 
 .peachPanel > img {
@@ -677,7 +679,8 @@
   width: 125%;
   max-width: none;
   height: auto;
-  opacity: 0.93;
+  filter: brightness(0.55) saturate(0.8) contrast(1.12);
+  opacity: 0.88;
 }
 
 .guideCaption {
@@ -693,8 +696,9 @@
 
 .guideCaption > span,
 .guideCaption > p {
-  border: 1px solid #ffffffc9;
-  background: #fffdf4f2;
+  border: 1px solid #ffffff31;
+  background: #181817e8;
+  color: var(--ink);
 }
 
 .guideCaption > span {
@@ -924,7 +928,7 @@
 }
 
 .billingToggle .billingActive {
-  background: var(--ink);
+  background: var(--orange);
   color: #fff;
 }
 
@@ -946,7 +950,7 @@
 }
 
 .pricingGrid .featuredTier {
-  background: #fff3ea;
+  background: #2e211c;
   box-shadow: inset 0 5px 0 var(--orange);
 }
 
@@ -1019,7 +1023,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  color: #51514d;
+  color: #c4c3bc;
   font-size: 13px;
   line-height: 1.35;
 }
@@ -1040,7 +1044,7 @@
   padding: 0 15px;
   border: 1px solid var(--ink);
   background: var(--ink);
-  color: #fff;
+  color: var(--dark);
   font-size: 13px;
   font-weight: 650;
 }

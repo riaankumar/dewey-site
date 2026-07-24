@@ -242,6 +242,7 @@ export function EditorialHome() {
               width={1536}
               height={1024}
               priority
+              loading="eager"
               sizes="(max-width: 900px) 100vw, 1400px"
             />
           </div>

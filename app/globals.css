@@ -60,77 +60,47 @@
 }
 
 :root {
-  --background: #f6f6f1;
-  --foreground: #161615;
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  color-scheme: dark;
+  --background: #20201e;
+  --foreground: #f3f2eb;
+  --card: #292927;
+  --card-foreground: #f3f2eb;
+  --popover: #292927;
+  --popover-foreground: #f3f2eb;
+  --primary: #f3f2eb;
+  --primary-foreground: #20201e;
+  --secondary: #31312e;
+  --secondary-foreground: #f3f2eb;
+  --muted: #31312e;
+  --muted-foreground: #aaa9a1;
+  --accent: #3a302b;
+  --accent-foreground: #fff1ea;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: rgb(255 255 255 / 12%);
+  --input: rgb(255 255 255 / 16%);
+  --ring: #7c83f5;
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --radius: 0.375rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-  /*
-    Brand accent — a teal→indigo gradient. The only colour on top of the stock
-    neutral theme.
-      --brand-from / --brand-via / --brand-to  gradient stops for accent CTAs
-      --brand        solid mid-tone for elements too small to show a gradient
-                     (dots, rings, progress, carets)
-      --brand-ink    text/icons — the gradient tones are too light to read on
-                     white, so text uses a deeper teal
-      --brand-muted  translucent tint for chips
-      --brand-glow   much weaker tint for the large ambient radial washes
-  */
-  /*
-    Accent gradient stops. The ramp travels in HUE (teal 185 → indigo 268),
-    not lightness or chroma, because those two axes have no room:
-
-      - Lightness is spoken for. Every accent fill carries WHITE text, so the
-        ramp has to stay dark enough to hold it. Above L≈0.54 the teal end
-        drops under 4.5:1 and the 10px badge text fails AA.
-      - Chroma is at the gamut wall. The teal end is already outside sRGB and
-        gets clipped, so raising C moves the rendered pixel almost nowhere
-        (C 0.11→0.15 at hue 185 is just #007d71→#008274).
-
-    Hue is the one axis left, and it's free: swinging to indigo gives 2.8x the
-    perceptual separation of the old teal→cyan (OKLab dE 0.23 vs 0.08) and
-    *gains* contrast at the far end (7.25:1). The via stop keeps the long
-    travel vivid — a straight 2-stop interpolation sags through a muddier
-    blue around the midpoint. Used by accent buttons, badges, coach marks and
-    the CTA band alike.
-  */
-  --brand-from: oklch(0.52 0.13 185);
-  --brand-via: oklch(0.5 0.15 225);
-  --brand-to: oklch(0.47 0.2 268);
-  --brand-foreground: oklch(1 0 0);
-  /* Brighter mid-tone for decorative bits that carry no text: dots, rings,
-     progress bars, carets. */
-  --brand: oklch(0.7 0.12 197);
-  --brand-ink: oklch(0.5 0.1 195);
-  --brand-muted: oklch(0.7 0.12 197 / 15%);
-  --brand-glow: oklch(0.7 0.12 197 / 8%);
+  --sidebar: #242422;
+  --sidebar-foreground: #f3f2eb;
+  --sidebar-primary: #ff755f;
+  --sidebar-primary-foreground: #181817;
+  --sidebar-accent: #31312e;
+  --sidebar-accent-foreground: #f3f2eb;
+  --sidebar-border: rgb(255 255 255 / 12%);
+  --sidebar-ring: #7c83f5;
+  --brand-from: #d9430e;
+  --brand-via: #d6554c;
+  --brand-to: #666bd8;
+  --brand-foreground: #fff;
+  --brand: #ff755f;
+  --brand-ink: #ff9c86;
+  --brand-muted: rgb(255 117 95 / 16%);
+  --brand-glow: rgb(255 117 95 / 9%);
 }
 
 @layer base {
