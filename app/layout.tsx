@@ -19,9 +19,9 @@ const hostGrotesk = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Emulate — Recordings that execute.",
+  title: "Emulate — Turn screen recordings into executable guides.",
   description:
-    "Record a workflow like a Loom. Emulate turns it into a guided replay your customer can follow in their own browser, ask questions about, and complete step by step.",
+    "Emulate turns screen recordings into guided, executable workflows with verified completion.",
 };
 
 export default function RootLayout({
@@ -30,10 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`dark ${emilio.variable} ${hostGrotesk.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${emilio.variable} ${hostGrotesk.variable}`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
