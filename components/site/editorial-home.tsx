@@ -8,7 +8,6 @@ import {
   CheckCircle2,
   ChevronRight,
   CircleDot,
-  LockKeyhole,
   Menu,
   MousePointer2,
   Play,
@@ -200,18 +199,6 @@ export function EditorialHome() {
       <main id="top">
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <div className={styles.eyebrowRow} aria-label="Platform capabilities">
-              <span>
-                <LockKeyhole aria-hidden /> No employee API keys
-              </span>
-              <span>
-                <ShieldCheck aria-hidden /> Action-level verification
-              </span>
-              <span>
-                <CircleDot aria-hidden /> Guides live software
-              </span>
-            </div>
-
             <h1>
               Record the workflow.
               <br />

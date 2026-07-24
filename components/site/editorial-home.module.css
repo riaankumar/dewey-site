@@ -196,32 +196,6 @@
   text-align: center;
 }
 
-.eyebrowRow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 42px;
-}
-
-.eyebrowRow span {
-  display: inline-flex;
-  min-height: 40px;
-  align-items: center;
-  gap: 8px;
-  padding: 0 14px;
-  border: 1px solid color-mix(in srgb, var(--coral) 45%, var(--line));
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--paper-bright) 88%, transparent);
-  font-size: 12px;
-  font-weight: 650;
-}
-
-.eyebrowRow svg {
-  width: 14px;
-  height: 14px;
-}
-
 .heroCopy h1 {
   max-width: 1150px;
   font-family: var(--font-emilio), Georgia, serif;
@@ -1341,16 +1315,6 @@
     padding: 76px 20px 66px;
   }
 
-  .eyebrowRow {
-    margin-bottom: 34px;
-  }
-
-  .eyebrowRow span {
-    min-height: 34px;
-    padding: 0 11px;
-    font-size: 10px;
-  }
-
   .heroCopy h1 {
     font-size: clamp(3.45rem, 14vw, 5.7rem);
     line-height: 0.92;
@@ -1535,13 +1499,8 @@
     text-align: left;
   }
 
-  .eyebrowRow,
   .heroActions {
     justify-content: flex-start;
-  }
-
-  .eyebrowRow span:last-child {
-    display: none;
   }
 
   .heroActions {
