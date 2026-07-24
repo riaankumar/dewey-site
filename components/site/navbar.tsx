@@ -26,9 +26,9 @@ import { cn } from "@/lib/utils";
 
 /* One lean set of links, shared by the desktop bar and the mobile sheet. */
 const NAV = [
-  { label: "How it works", href: "#how-it-works" },
-  { label: "The assistant", href: "#assistant" },
-  { label: "See it", href: "#replay" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "The assistant", href: "/#assistant" },
+  { label: "See it", href: "/#replay" },
 ];
 
 const dashboardUrl = CUSTOMER_DASHBOARD_URL;
@@ -87,7 +87,7 @@ export function Navbar() {
             size="lg"
             className="hidden px-4 sm:inline-flex"
             nativeButton={false}
-            render={<Link href="#access" />}
+            render={<Link href="/#access" />}
           >
             Request access
           </Button>
@@ -140,7 +140,7 @@ export function Navbar() {
                   variant="accent"
                   size="lg"
                   nativeButton={false}
-                  render={<Link href="#access" onClick={() => setOpen(false)} />}
+                  render={<Link href="/#access" onClick={() => setOpen(false)} />}
                 >
                   Request access
                 </Button>
