@@ -36,21 +36,11 @@ const COLUMNS = [
   {
     heading: "Product",
     links: [
-      { label: "Features", href: "#features" },
-      { label: "How it works", href: "#process" },
-      { label: "Use cases", href: "#use-cases" },
-      { label: "Pricing", href: "#pricing" },
-      { label: "Integrations", href: "#integrations" },
+      { label: "How it works", href: "#how-it-works" },
+      { label: "The assistant", href: "#assistant" },
+      { label: "See it", href: "#replay" },
+      { label: "Request access", href: "#access" },
       { label: "Customer login", href: dashboardUrl },
-    ],
-  },
-  {
-    heading: "Developers",
-    links: [
-      { label: "Documentation", href: "#developers" },
-      { label: "API reference", href: "#developers" },
-      { label: "SDK", href: "#developers" },
-      { label: "Status", href: "#developers" },
     ],
   },
   {
@@ -60,7 +50,6 @@ const COLUMNS = [
       { label: "Blog", href: "#" },
       { label: "Careers", href: "#", badge: "Hiring" },
       { label: "Contact", href: "#" },
-      { label: "Org pilot", href: "#cta" },
     ],
   },
   {
@@ -83,12 +72,12 @@ export function Footer() {
   return (
     <footer className="border-t border-border/70 bg-card/30">
       <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_repeat(4,1fr)]">
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_repeat(3,1fr)]">
           <div className="flex max-w-sm flex-col gap-4">
             <Logo />
             <p className="text-sm leading-relaxed text-muted-foreground">
-              Interactive demonstrations that guide, execute, and verify —
-              replacing passive video with proof that work actually got done.
+              Executable screen recordings your customers can follow, ask
+              questions about, and complete — with proof the work got done.
             </p>
             <div className="flex items-center gap-1">
               {SOCIALS.map((social) => (
